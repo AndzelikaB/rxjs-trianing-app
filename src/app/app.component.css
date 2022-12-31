@@ -1,0 +1,31 @@
+.panels, .inputs{
+  display: flex;
+  justify-content: space-evenly;
+}
+.inputs{
+  justify-content: center;
+
+}
+
+.rightPanel, .leftPanel{
+  width: 100%;
+  text-align: center;
+}
+
+input{
+  margin: 10px;
+}
+
+.btn{
+  background: rgb(75, 162, 75);
+  color: #fff;
+  padding: 20px;
+  margin: 5px;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+}
+
+.hidden{
+  display: none;
+}
