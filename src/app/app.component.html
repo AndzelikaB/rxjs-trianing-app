@@ -1,6 +1,6 @@
 <div class="container">
   <div class="panels">
-    <div class="leftPanel" ngClass="{{warunek ? 'hidden' : 'block'}}">
+    <div class="leftPanel" ngClass="{{warunek ? 'hidden' : ''}}">
       <app-left></app-left>
     </div>
 
@@ -11,8 +11,8 @@
 
   <div class="inputs">
     <input type="button" class="btn" value="Hidden Left" (click)="hiddenLeft()">
-    <input type="text">
-    <input type="text">
-    <input type="button" class="btn" value="Add Person">
+    <input type="text" [(ngModel)]="name">
+    <input type="text" [(ngModel)]="surname">
+    <input type="button" class="btn" value="Add Person" (click)="addPerson1(name, surname)">
   </div>
 </div>

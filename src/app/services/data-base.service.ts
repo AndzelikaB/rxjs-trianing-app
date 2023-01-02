@@ -9,6 +9,8 @@ export class DataBaseService {
     { firstName: 'Anna', lastName: 'Bonik' },
     { firstName: 'Karol', lastName: 'Kowalski' },
     { firstName: 'Wiktoria', lastName: 'Nowakowska' },
+    { firstName: 'Leopold', lastName: 'Witkiewicz' },
+    { firstName: 'Aurelia', lastName: 'Zenik' },
   ];
 
   fetchPersons(): Observable<Person[]> {

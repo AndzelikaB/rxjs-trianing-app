@@ -13,9 +13,10 @@ export class DataService {
     this.init();
   }
 
-  addPerson(person: Person) {
+  addPerson(person: Person): void {
     this.dataBaseService.addPerson(person).subscribe(this.observer);
   }
+
   private init(): void {
     this.dataBaseService.fetchPersons().subscribe(this.observer());
   }
