@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DataBaseService, Person } from './services/data-base.service';
+import { Person } from './services/data-base.service';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,19 +8,11 @@ import { DataBaseService, Person } from './services/data-base.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private dataBaseService: DataBaseService) {}
-  name: string = '';
-  surname: string = '';
-  warunek: boolean = false;
+  constructor(private dataService: DataService) {}
+  flag: boolean = true;
+  person: Person = { firstName: '', lastName: '' };
 
-  hiddenLeft(): void {
-    this.warunek = !this.warunek;
-  }
-
-  addPerson1(name: string, surname: string): void {
-    this.dataBaseService.addPerson({
-      firstName: name,
-      lastName: surname,
-    });
+  addPerson1(): void {
+    this.dataService.addPerson(this.person);
   }
 }
