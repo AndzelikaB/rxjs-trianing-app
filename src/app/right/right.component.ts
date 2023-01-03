@@ -10,27 +10,10 @@ import { DataService } from '../services/data.service';
 })
 export class RightComponent implements OnInit {
   title: string = 'Subject';
-  persons: Observable<Person[]> = of([
-    { firstName: 'Anna', lastName: 'Bonik' },
-    { firstName: 'Karol', lastName: 'Kowalski' },
-    { firstName: 'Wiktoria', lastName: 'Nowakowska' },
-    { firstName: 'Leopold', lastName: 'Witkiewicz' },
-    { firstName: 'Aurelia', lastName: 'Zenik' },
-  ]);
+  persons: Observable<Person[]> = of();
 
   constructor(private dataService: DataService) {}
   ngOnInit(): void {
-    console.log('Right Component');
     this.persons = this.dataService.subject.asObservable();
-    console.log('show: ' + this.persons);
-    this.persons.subscribe((response) => console.log(response));
-
-    this.dataService.subject.next([
-      { firstName: 'Anna', lastName: 'Bonik' },
-      { firstName: 'Karol', lastName: 'Kowalski' },
-      { firstName: 'Wiktoria', lastName: 'Nowakowska' },
-      { firstName: 'Leopold', lastName: 'Witkiewicz' },
-      { firstName: 'Aurelia', lastName: 'Zenik' },
-    ]);
   }
 }

@@ -12,7 +12,7 @@ export class AppComponent {
   flag: boolean = true;
   person: Person = { firstName: '', lastName: '' };
 
-  addPerson1(): void {
+  add(): void {
     this.dataService.addPerson(this.person);
   }
 }
